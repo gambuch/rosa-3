@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Location Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #e0f7fa;
+      }
+      img {
+        width: 150px;
+        border-radius: 10px;
+        margin: 10px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 20px;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .next-button {
+        background-color: #28a745;
+      }
+      .next-button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+<body>
+    <h1>Where we goin after dummy :) </h1>
+<p>choose ;) </p>
+
+    <!-- Images and Checkboxes -->
+    <form id="locationForm">
+      <div>
+        <img
+          src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSik_zkeedQ4dkpiSK0zg6g0MA7dgTfj2BF2Yp8jo51PjKmow1o5lagx4cP-mou6qpecQQc"
+          alt="Option 1"
+        />
+        <label
+          ><input type="checkbox" name="location" value="Movies" />
+          Movies (captain america drops feb 14:) </label
+        >
+      </div>
+      <div>
+        <img
+          src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS4B03WCAkIK0U9kwizx8R70zP-FuHe7n22JkLmgIlrUy1pi8X1"
+          alt="Option 2"
+        />
+        <label
+          ><input type="checkbox" name="location" value="home" /> watch twd at home </label
+        >
+      </div>
+      <div>
+        <img
+          src="https://nyboneandjoint.com/wp-content/uploads/2022/02/bowling-1-e1643937328851.jpg"
+          alt="Option 3"
+        />
+        <label
+          ><input type="checkbox" name="location" value="Grand Canyon" /> Bowling </label
+        >
+      </div>
+      <div>
+        <img
+          src="https://ideascdn.lego.com/media/generate/entity/lego_ci/project/a8a6b60f-e439-4e5a-ac47-428732508310/1/resize:1600:900/legacy"
+          alt="Option 4"
+        />
+        <label
+          ><input type="checkbox" name="location" value="San Francisco" />
+          Build legos (go shopping) </label
+        >
+      </div>
+      <button type="button" onclick="logLocations()">Submit</button>
+      <br />
+      <!-- Next Button -->
+      <button
+        type="button"
+        class="next-button"
+        onclick="goToFinalPage()"
+      >
+        Next
+      </button>
+    </form>
+
+    <script>
+      function logLocations() {
+        const form = document.getElementById("locationForm");
+        const formData = new FormData(form);
+        const selectedLocations = [];
+
+        formData.forEach((value) => {
+          selectedLocations.push(value);
+        });
+
+        if (selectedLocations.length > 0) {
+          console.log("Selected Locations:", selectedLocations);
+          alert("Locations logged successfully! Check the console.");
+        } else {
+          alert("No locations selected.");
+        }
+      }
+
+      function goToFinalPage() {
+        window.location.href = "thank-you.html"; // Redirect to the final page
+      }
+    </script>
+</body>
+</html>

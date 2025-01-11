@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yes Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #d4edda;
+      }
+      img {
+        width: 150px;
+        border-radius: 10px;
+        margin: 10px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 20px;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .next-button {
+        background-color: #28a745;
+        margin-top: 10px;
+      }
+      .next-button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Thank you dearest Rosa, I'm honored</h1>
+    <p>Now for some fun :) Make a good choice 😇</p>
+
+    <!-- Images and Checkboxes -->
+    <form id="selectionForm">
+      <div>
+        <img
+          src="https://kobesteakhouse.com/wp-content/uploads/2018/07/DSC5961.jpg"
+          alt="Option 1"
+        />
+        <label
+          ><input type="checkbox" name="option" value="Option 1" />
+          Hibachi</label
+        >
+      </div>
+      <div>
+        <img
+          src="https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2023/10/pho.jpg"
+          alt="Option 2"
+        />
+        <label
+          ><input type="checkbox" name="option" value="Option 2" /> Pho
+        </label>
+      </div>
+      <div>
+        <img
+          src="https://www.thespruceeats.com/thmb/D9hctWPH31A5oiQ34J4Hknc6x0Y=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1042998066-518ca1d7f2804eb09039e9e42e91667c.jpg"
+          alt="Option 3"
+        />
+        <label
+          ><input type="checkbox" name="option" value="Option 3" /> Thai Cuisine
+        </label>
+      </div>
+      <div>
+        <img
+          src="https://img.taste.com.au/ZYgF7ib4/taste/2016/11/bimbimbap-92850-2.jpeg"
+          alt="Option 4"
+        />
+        <label
+          ><input type="checkbox" name="option" value="Option 4" /> Bibimbap
+        </label>
+      </div>
+      <div>
+        <img
+          src="https://didsomeonesayitaly.com/wp-content/uploads/2024/01/italian-foods.jpg"
+          alt="Option 5"
+        />
+        <label
+          ><input type="checkbox" name="option" value="Option 5" />Italian Food
+        </label>
+      </div>
+      <br />
+      <button type="button" onclick="logSelections()">Submit</button>
+      <br />
+      <!-- Next Button -->
+      <button
+        type="button"
+        class="next-button"
+        onclick="goToNextPage()"
+      >
+        Next
+      </button>
+    </form>
+
+    <script>
+      function logSelections() {
+        const form = document.getElementById("selectionForm");
+        const formData = new FormData(form);
+        const selectedOptions = [];
+
+        formData.forEach((value) => {
+          selectedOptions.push(value);
+        });
+
+        if (selectedOptions.length > 0) {
+          console.log("Selected Options:", selectedOptions);
+          alert("Selections logged successfully! Check the console.");
+        } else {
+          alert("No options selected.");
+        }
+      }
+
+      function goToNextPage() {
+        window.location.href = "desserts.html"; // Change to your desired URL
+      }
+    </script>
+  </body>
+</html>

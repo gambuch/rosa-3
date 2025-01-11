@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Desserts Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #fbe7e7;
+      }
+      img {
+        width: 150px;
+        border-radius: 10px;
+        margin: 10px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 20px;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .back-button {
+        background-color: #ff6f61;
+      }
+      .back-button:hover {
+        background-color: #e65c50;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sweet Treats 🍨</h1>
+    <p>Choose your fav my love  </p>
+
+    <!-- Images and Checkboxes -->
+    <form id="dessertsForm">
+      <div>
+        <img
+          src="https://zhangcatherine.com/wp-content/uploads/2021/07/12001200-8.jpg"
+          alt="Option 1"
+        />
+        <label
+          ><input type="checkbox" name="dessert" value="Mochi Donuts" />
+          Mochi Donuts</label
+        >
+      </div>
+      <div>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROy5_4hG-sA3_enKiTojs1S7O2GAqUSCrVbQ&s"
+          alt="Option 2"
+        />
+        <label
+          ><input type="checkbox" name="dessert" value="Ice Cream" /> Ice Cream
+        </label>
+      </div>
+      <div>
+        <img
+          src="https://assets.epicurious.com/photos/63ceef73542b6a1c72a6722a/16:9/w_2560%2Cc_limit/SheetPanLayerCake_HERO_012023_45930.jpg"
+          alt="Option 3"
+        />
+        <label
+          ><input type="checkbox" name="dessert" value="Bake our own cake" /> Bake our own cake
+        </label>
+      </div>
+      <div>
+        <img
+          src="https://www.allrecipes.com/thmb/DHosjm3NundSDP1q6wWEEECYwr8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8419-easy-sour-cream-cheesecake-DDMFS-beauty-4x3-BG-2747-44b427d330aa41aa876269b1249698a0.jpg"
+          alt="Option 4"
+        />
+        <label
+          ><input type="checkbox" name="dessert" value="Cheesecake" />
+          Cheesecake</label
+        >
+      </div>
+      <div>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq4u6pnteJIkwB_6BdXmxig3sceH9VwFNr5Q&s"
+          alt="Option 5"
+        />
+        <label
+          ><input type="checkbox" name="dessert" value="Fruit Medley" />
+          Fruit medley (fruit shopping!) </label
+        >
+      </div>
+      <br />
+      <button type="button" onclick="logDesserts()">Submit</button>
+      <br />
+      <!-- Back Button -->
+      
+    </form>
+
+    <script>
+      function logDesserts() {
+        const form = document.getElementById("dessertsForm");
+        const formData = new FormData(form);
+        const selectedDesserts = [];
+
+        formData.forEach((value) => {
+          selectedDesserts.push(value);
+        });
+
+        if (selectedDesserts.length > 0) {
+          console.log("Selected Desserts:", selectedDesserts);
+          alert("Desserts logged successfully! Check the console.");
+        } else {
+          alert("No desserts selected.");
+        }
+      }
+
+      function goBack() {
+        window.history.back(); // Navigates to the previous page
+      }
+    </script>
+  </body>
+</html>
